@@ -51,12 +51,10 @@ left:10px;
   border-radius: 50%;
   display: inline-block;
 }
-.dot:hover {
-  background-color: white;
+.dotactive{
+  background-color: gray;
 }
-.active{
-  background-color: white;
-}
+
 * {
 padding: 0 0 0 0;
 margin: 0 0 0 0; 
