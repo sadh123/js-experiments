@@ -1,0 +1,305 @@
+@media only screen and (max-width: 1169px) {
+
+
+  .usermenu {
+    display: none;
+  }
+
+  .socialIcon {
+    padding-left: 2%;
+
+  }
+
+  .topmenu {
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .topmenuRight {
+    padding-right: 2%;
+  }
+
+  .mainmenu {
+    position: relative;
+  }
+
+  .mainmenu-container {
+    max-width: 90%;
+    width: 100%;
+  }
+  .hamburger{
+    display:block;
+    float: left;
+ }
+
+  .logo {
+    position: absolute;
+    left: 40%;
+    padding-right: 0px;
+  }
+
+  .belowmainmenu-container {
+    display: none;
+  }
+
+  .title-container {
+    background-image: none;
+    background-color: grey;
+  }
+
+  .headerleft {
+    display: none;
+  }
+
+  .headeright {
+    display: none;
+  }
+
+  .content-top ul {
+    display: none;
+  }
+
+  .content-top .sort-dropdown {
+    display: block;
+    width: 50%;
+
+  }
+.mainmenuright li:nth-child(1){
+  display: none;
+}
+.mainmenuright li:nth-child(2){
+  display: none;
+}
+  .sort-dropdown select {
+    width: 100%;
+    border-radius: 25px;
+    background-color: antiquewhite;
+    line-height: 20px;
+    padding: 10px;
+  }
+
+  .mainbody {
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .content-bottom-container-container {
+    padding-top: 0px;
+  }
+
+  .content-bottom-container {
+
+    max-width: 90%;
+  }
+
+  .toparticle1 {
+    min-height: 300px;
+    width: 100%;
+  }
+
+  .articleleft {
+    float: left;
+    width: 32%;
+  }
+
+  .articleright {
+    float: right;
+    width: 60%;
+  }
+
+  .article8 {
+    width: 48%;
+    float: left;
+    margin-right: 2%;
+  }
+
+  .left-articletop {
+    float: left;
+    padding-left: 0px;
+  }
+
+  .top-bottom li {
+    display: inline;
+    padding-right: 0px;
+  }
+
+  .play {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+  }
+
+  .articlemore {
+    width: 60%;
+    margin: 10px 50px 10px 10px;
+  }
+
+  .articlemore .more {
+    position: absolute;
+    right: 15%;
+    top: 30%;
+  }
+
+  .searchbar {
+    width: 90%;
+  }
+
+  .searchimage {
+    right: 5%;
+  }
+
+  .category {
+    width: 100%;
+    margin: 2%;
+  }
+
+  .subscribe {
+    display: none;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .topic {
+    border-bottom: 3px solid #aec3ff;
+    font-size: 30px;
+  }
+
+  .footerbody {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .footerbottom {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .newsletter {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .tabpostwidgets {
+    display: none;
+  }
+
+  .tags {
+    width: 100%;
+    margin: 2%;
+  }
+
+  .tags ul li a {
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 15px;
+  }
+
+  .or {
+    display: none;
+  }
+
+  .subscribe .icon {
+    display: none;
+  }
+
+  .newsletter input {
+    line-height: 20px;
+    margin-top: 5%;
+    font-size: 10px;
+  }
+
+  .btn-subscribe {
+    line-height: 20px;
+    margin-top: 5%;
+  }
+  .btn-subscribe a{
+    font-size: 10px;
+  }
+
+  .newsletter .left {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 100px;
+  }
+  .instaphotos img {
+    width: 100px;
+}
+
+  .footerbody-container {
+    display: none;
+  }
+  .footerbottom-container{
+    display: none;
+  }
+
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+
+  .socialIcon li {
+    padding-right: 5%;
+    width: 100%;
+    max-width: 80%;
+    clear: both;
+}
+.topmenuRight li {
+  padding-left: 4%;
+}
+
+.topmenuRight{
+  clear: both;
+    width: 100%;
+}
+.article1 .bottomarticle1{
+  display: none;
+ 
+}
+.toparticle1 {
+  min-height: 150px;
+  width: 100%;
+}
+.articleright {
+  clear: both;
+  width: 100%;
+}
+.toparticle2{
+  margin-left: 20%;
+}
+.article2 .top-bottom{
+  display: none;
+}.article2 .play{
+top:35%;
+left: 150%;;
+}
+
+.article5 .artcle1desciption{
+  display: none;
+}
+.article5 .author{
+  display: none;
+}
+.article5 {
+ 
+   width: 100%;
+}
+
+.newsletter input {
+display: none;
+}
+.btn-subscribe  {
+width: 100%;
+margin-bottom: 20px;
+}
+
+}
+
+
+
