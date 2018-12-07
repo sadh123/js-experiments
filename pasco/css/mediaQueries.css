@@ -31,6 +31,7 @@
     display:block;
     float: left;
  }
+ 
 
   .logo {
     position: absolute;
@@ -234,7 +235,20 @@
   .footerbottom-container{
     display: none;
   }
-
+  .article8 .top-bottom{
+    display: none;
+  }
+  .footermain .icon1{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    max-width:90%;
+  }
+  .footermain .icon1 li{
+  display: inline;
+  }
+  
+  
 }
 
 
@@ -245,18 +259,28 @@
 
 
   .socialIcon li {
-    padding-right: 5%;
-    width: 100%;
-    max-width: 80%;
-    clear: both;
+   display: none;
 }
-.topmenuRight li {
-  padding-left: 4%;
+.topmenuRight li:nth-child(1){
+  float: left;
+}
+.topmenuRight li:nth-child(2){
+  float: right;
 }
 
 .topmenuRight{
   clear: both;
     width: 100%;
+}
+.hamitems {
+  width: 30%;
+}
+.article1 .play{
+  left: 45%;
+}
+.play {
+
+  left: 40%;
 }
 .article1 .bottomarticle1{
   display: none;
@@ -290,6 +314,8 @@ left: 150%;;
  
    width: 100%;
 }
+.article8 {
+  width: 100%;
 
 .newsletter input {
 display: none;
@@ -298,6 +324,14 @@ display: none;
 width: 100%;
 margin-bottom: 20px;
 }
+.footermain .icon1{
+  display: block;
+  padding: 10px;
+}
+.footermain .icon1 li{
+display: inline;
+}
+
 
 }
 

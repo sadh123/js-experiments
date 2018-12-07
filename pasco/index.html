@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WELCOME TO PASCO</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -33,10 +33,11 @@
                 </div>
                 <div class="topmenuRight">
                     <ul>
-                        <li><img class="toprighticon" src="header/topmenu/socialicon/signin.png" alt="signin"> SIGN IN
-                            <img class="toprightline" src="header/topmenu/socialicon/line.jpg"></li>
-                        <li><img class="toprighticon" src="header/topmenu/socialicon/lang.png" alt="lang"> ENG<img
-                                class="toprightarrow" src="header/topmenu/socialicon/arrow.jpg" alt="arrow"></li>
+                        <li><a href="#"><img class="toprighticon" src="header/topmenu/socialicon/signin.png" alt="signin">
+                                SIGN IN
+                                <img class="toprightline" src="header/topmenu/socialicon/line.jpg"></a></li>
+                        <li><a href="#"><img class="toprighticon" src="header/topmenu/socialicon/lang.png" alt="lang">
+                                ENG<img class="toprightarrow" src="header/topmenu/socialicon/arrow.jpg" alt="arrow"></a></li>
                     </ul>
                 </div>
             </div>
@@ -51,12 +52,27 @@
             </button>
             <div class="mainmenu-container">
                 <div class="mainmenu clearfix">
-                        <div class ="hamburger">
-                                <div class="ham"></div>
-                                <div class="ham"></div>
-                                <div class="ham"></div>
-                                </div>
-                    <div class="logo"><img src="header/mainmenu/logo.png" alt="logo"></div>
+                    <div class="hamcontainer">
+                        <div class="hamburger" onclick="myClickFunction()">
+                            <div class="ham"></div>
+                            <div class="ham"></div>
+                            <div class="ham"></div>
+                        </div>
+                        <div id="hamMenu" class="hamitems">
+                            <ol>
+                                <ul>
+                                    <li><a href="#">HOME</a></li>
+                                    <li><a href="#">PORTFOLIO</a></li>
+                                    <li><a href="#">BLOG</a></li>
+                                    <li><a href="#">PAGES</a></li>
+                                    <li><a href="#">SHOP</a></li>
+                                    <li><a href="#">COMPONENTS</a></li>
+                                    <li><a href="#">FEATURES</a></li>
+                                </ul>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="logo"><a href="#"><img src="header/mainmenu/logo.png" alt="logo"></a></div>
                     <div class="usermenu">
                         <ul>
                             <li><a href="#">HOME<img class="mainmenuarrow" src="header/mainmenu/arrow.png" alt="arrow"></a></li>
@@ -71,9 +87,11 @@
                     </div>
                     <div class="mainmenuright">
                         <ul>
-                            <li><img src="header/mainmenu/search.png" alt="search"><img class="mainmenurightline" src="header/mainmenu/line.jpg"></li>
-                            <li><img src="header/mainmenu/heart.png" alt="search"><img class="mainmenurightline" src="header/mainmenu/line.jpg"></li>
-                            <li><img src="header/mainmenu/cart.png" alt="search"></li>
+                            <li><a href="#"><img src="header/mainmenu/search.png" alt="search"><img class="mainmenurightline"
+                                        src="header/mainmenu/line.jpg"></a></li>
+                            <li><a href="#"></a><img src="header/mainmenu/heart.png" alt="search"><img class="mainmenurightline"
+                                    src="header/mainmenu/line.jpg"></a></li>
+                            <li><a href="#"><img src="header/mainmenu/cart.png" alt="search"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -84,7 +102,7 @@
                     <div class="article">
                         <span class="articletitle">INSPIRATION</span>
                         <div class="topic1">5 WAYS MILLLENNIALS CAN START BUILDING THEIR FUTURE TODAY </div>
-                        <div><button class="readmore"> READ MORE</button></div>
+                        <div><a href="#"><button class="readmore"> READ MORE</button></a></div>
                     </div>
                     <div class="authortitle clearfix">
                         <div class="author-img"><img src="header/title/author.jpg" alt="author"></div>
@@ -112,16 +130,17 @@
     <div class="content-container">
         <div class="content-top-container">
             <div class="content-top">
-                    <div class="sort-dropdown"">
+                <div class="sort-dropdown"">
                             <select>
                               <option value disabled selected>SORT</option>
-                              <option value="1">ALL</option>
-                              <option value="2">PHOTOGRAPHY</option>
-                              <option value="3">LIFESTYLE</option>
-                              <option value="4">TRIP</option>
-                              <option value="5">INSPIRATION</option>
-                             </select>
-                          </div>
+                              <option value="
+                    1">ALL</option>
+                    <option value="2">PHOTOGRAPHY</option>
+                    <option value="3">LIFESTYLE</option>
+                    <option value="4">TRIP</option>
+                    <option value="5">INSPIRATION</option>
+                    </select>
+                </div>
                 <ul>
                     <li class="title">SORT BLOG:</li>
                     <li>ALL</li>
@@ -153,7 +172,7 @@
                             <div class="bottomarticle1 clearfix">
 
                                 <div class="artcledetails">
-                                    <div class="artcle1title"> Things to change your life forever</div>
+                                    <div class="artcle1title"> <a href="#">Things to change your life forever</a></div>
                                     <div class="artcle1desciption">The one coctant thngds in our life is change. We
                                         cannot
                                         avoid it and the more we try
@@ -168,7 +187,7 @@
                                     </div>
                                     <div class="left">
                                         <div class="left-author">
-                                            <div class="authorName1">Henry Little</div>
+                                                <div class="authorName1"><a href="#">Henry Little</a></div>
                                             <div class="authordetails1"><span class="authordate">April 28, 2016</span><span>10:15</span></div>
                                             <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
 
@@ -201,7 +220,7 @@
                                 <div class="articleright clearfix">
 
                                     <div class="artcledetails">
-                                        <div class="artcle2title"> Things to change your life forever</div>
+                                        <div class="artcle2title"><a href="#"> Things to change your life forever</a></div>
                                         <div class="artcle2desciption">The one coctant thngds in our life is change. We
                                             cannot
                                             avoid it and the more we try
@@ -216,7 +235,7 @@
                                         </div>
                                         <div class="left">
                                             <div class="left-author">
-                                                <div class="authorName1">Henry Little</div>
+                                                    <div class="authorName1"><a href="#">Henry Little</a></div>
                                                 <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
                                                 <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
 
@@ -228,97 +247,97 @@
                                 </div>
                             </div>
                             <div class="article2 clearfix">
-                                    <div class="articleleft clearfix">
-    
-                                        <div class="articlephoto clearfix">
-                                            <img class="toparticle2" src="content/mainbody/article234/3.png" alt="play">
-                                            <div class="top-bottom clearfix">
-                                                <div class="left-articletop2">INSPIRATION</div>
-                                                <div class="right-articletop2">
-                                                    <ul>
-                                                        <li><img class="icon-photo" src="content/mainbody/mess.png">7</li>
-                                                        <li><img class="icon-photo" src="content/mainbody/comm.png">15</li>
-                                                    </ul>
-                                                </div>
+                                <div class="articleleft clearfix">
+
+                                    <div class="articlephoto clearfix">
+                                        <img class="toparticle2" src="content/mainbody/article234/3.png" alt="play">
+                                        <div class="top-bottom clearfix">
+                                            <div class="left-articletop2">INSPIRATION</div>
+                                            <div class="right-articletop2">
+                                                <ul>
+                                                    <li><img class="icon-photo" src="content/mainbody/mess.png">7</li>
+                                                    <li><img class="icon-photo" src="content/mainbody/comm.png">15</li>
+                                                </ul>
                                             </div>
                                         </div>
-    
                                     </div>
-                                    <div class="articleright clearfix">
-    
-                                        <div class="artcledetails">
-                                            <div class="artcle2title"> Things to change your life forever</div>
-                                            <div class="artcle2desciption">The one coctant thngds in our life is change. We
-                                                cannot
-                                                avoid it and the more we try
-                                                to
-                                                resist chanethe toughest our life becomes.
+
+                                </div>
+                                <div class="articleright clearfix">
+
+                                    <div class="artcledetails">
+                                        <div class="artcle2title"><a href="#"> Things to change your life forever</a></div>
+                                        <div class="artcle2desciption">The one coctant thngds in our life is change. We
+                                            cannot
+                                            avoid it and the more we try
+                                            to
+                                            resist chanethe toughest our life becomes.
+                                        </div>
+                                    </div>
+
+                                    <div class="author2 clearfix">
+                                        <div class="left">
+                                            <div class="author-img"><img src="content/mainbody/authorr.png" alt="author"></div>
+                                        </div>
+                                        <div class="left">
+                                            <div class="left-author">
+                                                    <div class="authorName1"><a href="#">Henry Little</a></div>
+                                                <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
+                                                <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
+
                                             </div>
                                         </div>
-    
-                                        <div class="author2 clearfix">
-                                            <div class="left">
-                                                <div class="author-img"><img src="content/mainbody/authorr.png" alt="author"></div>
-                                            </div>
-                                            <div class="left">
-                                                <div class="left-author">
-                                                    <div class="authorName1">Henry Little</div>
-                                                    <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
-                                                    <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
-    
-                                                </div>
-                                            </div>
-    
-    
-                                        </div>
+
+
                                     </div>
                                 </div>
-                                <div class="article2 clearfix">
-                                        <div class="articleleft clearfix">
-        
-                                            <div class="articlephoto clearfix">
-                                                <img class="toparticle2" src="content/mainbody/article234/4.png" alt="play">
-                                                <div class="top-bottom clearfix">
-                                                    <div class="left-articletop2">INSPIRATION</div>
-                                                    <div class="right-articletop2">
-                                                        <ul>
-                                                            <li><img class="icon-photo" src="content/mainbody/mess.png">7</li>
-                                                            <li><img class="icon-photo" src="content/mainbody/comm.png">15</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-        
-                                        </div>
-                                        <div class="articleright clearfix">
-        
-                                            <div class="artcledetails">
-                                                <div class="artcle2title"> Things to change your life forever</div>
-                                                <div class="artcle2desciption">The one coctant thngds in our life is change. We
-                                                    cannot
-                                                    avoid it and the more we try
-                                                    to
-                                                    resist chanethe toughest our life becomes.
-                                                </div>
-                                            </div>
-        
-                                            <div class="author2 clearfix">
-                                                <div class="left">
-                                                    <div class="author-img"><img src="content/mainbody/authorr.png" alt="author"></div>
-                                                </div>
-                                                <div class="left">
-                                                    <div class="left-author">
-                                                        <div class="authorName1">Henry Little</div>
-                                                        <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
-                                                        <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
-        
-                                                    </div>
-                                                </div>
-        
-        
+                            </div>
+                            <div class="article2 clearfix">
+                                <div class="articleleft clearfix">
+
+                                    <div class="articlephoto clearfix">
+                                        <img class="toparticle2" src="content/mainbody/article234/4.png" alt="play">
+                                        <div class="top-bottom clearfix">
+                                            <div class="left-articletop2">INSPIRATION</div>
+                                            <div class="right-articletop2">
+                                                <ul>
+                                                    <li><img class="icon-photo" src="content/mainbody/mess.png">7</li>
+                                                    <li><img class="icon-photo" src="content/mainbody/comm.png">15</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
+
+                                </div>
+                                <div class="articleright clearfix">
+
+                                    <div class="artcledetails">
+                                        <div class="artcle2title"><a href="#"> Things to change your life forever</a></div>
+                                        <div class="artcle2desciption">The one coctant thngds in our life is change. We
+                                            cannot
+                                            avoid it and the more we try
+                                            to
+                                            resist chanethe toughest our life becomes.
+                                        </div>
+                                    </div>
+
+                                    <div class="author2 clearfix">
+                                        <div class="left">
+                                            <div class="author-img"><img src="content/mainbody/authorr.png" alt="author"></div>
+                                        </div>
+                                        <div class="left">
+                                            <div class="left-author">
+                                                    <div class="authorName1"><a href="#">Henry Little</a></div>
+                                                <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
+                                                <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                         <div class="article567 clearfix">
@@ -339,7 +358,7 @@
                                 <div class="bottomarticle1 clearfix">
 
                                     <div class="artcledetails">
-                                        <div class="artcle1title"> Things to change your life forever</div>
+                                        <div class="artcle1title"> <a href="#">Things to change your life forever</a></div>
                                         <div class="artcle1desciption">The one coctant thngds in our life is change. We
                                             cannot
                                             avoid it and the more we try
@@ -354,7 +373,7 @@
                                         </div>
                                         <div class="left">
                                             <div class="left-author">
-                                                <div class="authorName1">Henry Little</div>
+                                                    <div class="authorName1"><a href="#">Henry Little</a></div>
                                                 <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
                                                 <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
 
@@ -381,7 +400,7 @@
                                 <div class="bottomarticle1 clearfix">
 
                                     <div class="artcledetails">
-                                        <div class="artcle1title"> Things to change your life forever</div>
+                                        <div class="artcle1title"> <a href="#">Things to change your life forever</a></div>
                                         <div class="artcle1desciption">The one coctant thngds in our life is change. We
                                             cannot
                                             avoid it and the more we try
@@ -396,7 +415,7 @@
                                         </div>
                                         <div class="left">
                                             <div class="left-author">
-                                                <div class="authorName1">Henry Little</div>
+                                                    <div class="authorName1"><a href="#">Henry Little</a></div>
                                                 <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
                                                 <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
 
@@ -423,7 +442,7 @@
                                 <div class="bottomarticle1 clearfix">
 
                                     <div class="artcledetails">
-                                        <div class="artcle1title"> Things to change your life forever</div>
+                                        <div class="artcle1title"> <a href="#">Things to change your life forever</a></div>
                                         <div class="artcle1desciption">The one coctant thngds in our life is change. We
                                             cannot
                                             avoid it and the more we try
@@ -438,7 +457,7 @@
                                         </div>
                                         <div class="left">
                                             <div class="left-author">
-                                                <div class="authorName1">Henry Little</div>
+                                                    <div class="authorName1"><a href="#">Henry Little</a></div>
                                                 <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
                                                 <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
 
@@ -469,7 +488,7 @@
                                 <div class="bottomarticle1 clearfix">
 
                                     <div class="artcledetails">
-                                        <div class="artcle1title"> Things to change your life forever</div>
+                                        <div class="artcle1title"> <a href="#">Things to change your life forever</a></div>
                                         <div class="artcle1desciption">The one coctant thngds in our life is change. We
                                             cannot
                                             avoid it and the more we try
@@ -484,7 +503,7 @@
                                         </div>
                                         <div class="left">
                                             <div class="left-author">
-                                                <div class="authorName1">Henry Little</div>
+                                                    <div class="authorName1"><a href="#">Henry Little</a></div>
                                                 <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
                                                 <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
 
@@ -511,7 +530,7 @@
                                 <div class="bottomarticle1 clearfix">
 
                                     <div class="artcledetails">
-                                        <div class="artcle1title"> Things to change your life forever</div>
+                                        <div class="artcle1title"> <a href="#">Things to change your life forever</a></div>
                                         <div class="artcle1desciption">The one coctant thngds in our life is change. We
                                             cannot
                                             avoid it and the more we try
@@ -526,7 +545,7 @@
                                         </div>
                                         <div class="left">
                                             <div class="left-author">
-                                                <div class="authorName1">Henry Little</div>
+                                                    <div class="authorName1"><a href="#">Henry Little</a></div>
                                                 <div class="authordetails1"><span class="authordate">April 28, 2016</span></div>
                                                 <img class="right-author" src="content/mainbody/article1/line.jpg" alt="line">
 
@@ -671,13 +690,23 @@
 
                 </div>
             </div>
+            <div class="icon1 clearfix">
+                    <ul>
+                        <li><img src="content/sidewbar/fb.png" alt="fb"></li>
+                        <li><img src="content/sidewbar/w.png" alt="fb"></li>
+                        <li><img src="content/sidewbar/p.png" alt="fb"></li>
+                        <li><img src="content/sidewbar/t.png" alt="fb"></li>
+                        <li><img src="content/sidewbar/rotary.png" alt="fb"></li>
+                    </ul>
+
+                </div>
         </div>
         <div class="footerbody-container clearfix">
             <div class="footerbody clearfix">
                 <div class="every-footer">
                     <div class="pages-widget">
                         <p>PAGES WIDGET</p>
-                        <button class="dropdown-btn">HOME
+                        <button class="dropdown-btn" onclick="myExpandFunction(0)">HOME
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="dropdown-container">
@@ -685,7 +714,7 @@
                             <a href="#">FAQ</a>
                             <a href="#">About</a>
                         </div>
-                        <button class="dropdown-btn">PAGES
+                        <button class="dropdown-btn" onclick="myExpandFunction(1)">PAGES
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="dropdown-container">
@@ -693,7 +722,7 @@
                             <a href="#">FAQ</a>
                             <a href="#">About</a>
                         </div>
-                        <button class="dropdown-btn">PORTFOLIO
+                        <button class="dropdown-btn" onclick="myExpandFunction(2)">PORTFOLIO
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="dropdown-container">
@@ -701,7 +730,7 @@
                             <a href="#">FAQ</a>
                             <a href="#">About</a>
                         </div>
-                        <button class="dropdown-btn">BLOG
+                         <button class="dropdown-btn" onclick="myExpandFunction(3)">BLOG
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="dropdown-container">
@@ -709,7 +738,7 @@
                             <a href="#">FAQ</a>
                             <a href="#">About</a>
                         </div>
-                        <button class="dropdown-btn">SHOP
+                        <button class="dropdown-btn" onclick="myExpandFunction(4)">SHOP
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="dropdown-container">
@@ -795,17 +824,17 @@
                         <img src="footer/flicker/1.png" alt="img1">
                         <img src="footer/flicker/2.png" alt="img1">
                         <img src="footer/flicker/3.png" alt="img1">
-                        
+
                     </div>
                     <div>
-                            <img src="footer/flicker/4.png" alt="img1">
-                            <img src="footer/flicker/5.png" alt="img1">
-                            <img src="footer/flicker/6.png" alt="img1">
+                        <img src="footer/flicker/4.png" alt="img1">
+                        <img src="footer/flicker/5.png" alt="img1">
+                        <img src="footer/flicker/6.png" alt="img1">
                     </div>
                     <div>
-                            <img src="footer/flicker/7.png" alt="img1">
-                            <img src="footer/flicker/8.png" alt="img1">
-                            <img src="footer/flicker/9.png" alt="img1">
+                        <img src="footer/flicker/7.png" alt="img1">
+                        <img src="footer/flicker/8.png" alt="img1">
+                        <img src="footer/flicker/9.png" alt="img1">
                     </div>
                 </div>
                 <div class="every-footer">
@@ -818,6 +847,7 @@
 
                     </div>
                 </div>
+                
             </div>
 
         </div>
@@ -853,7 +883,7 @@
 
 
 
-
+    <script src="script.js"></script>
 </body>
 
 </html>

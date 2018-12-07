@@ -42,6 +42,11 @@
     display: inline;
 }
 
+.topmenuRight a {
+    text-decoration: none;
+    color: white;
+}
+
 .toprighticon {
     padding-right: 8px;
 }
@@ -81,19 +86,61 @@
     padding-bottom: 27px;
 
 }
-.hamburger{
-   display:none;
+
+.hamitems {
+    display: none;
+    position: absolute;
+    top: 65px;
+    width: 20%;
+    background-color: grey;
+    z-index: 10;
+    border: 1px solid white;
 }
+
+.hamburger a {
+    text-decoration: none;
+    color: white;
+}
+
+.hamitems ol li {
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.hamitems a {
+    text-decoration: none;
+    /* list-style-type: none; */
+    color: white;
+}
+
+
+.hamcontainer {
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+
+}
+
 .ham {
     width: 35px;
     height: 5px;
     background-color: white;
     margin: 6px 0;
 }
+
 .logo {
     float: left;
     line-height: 2.5;
     padding-right: 112px;
+}
+
+.logo {
+    text-decoration: none;
 }
 
 .usermenu {
@@ -130,6 +177,12 @@
 .mainmenuright {
     float: right;
     padding-right: 16px;
+}
+
+.mainmenuright a {
+    text-decoration: none;
+    color: white;
+
 }
 
 .mainmenuright li {
@@ -195,6 +248,13 @@
     min-height: 45px;
     width: 170px;
     margin-bottom: 80px;
+}
+
+.readmore a {
+    text-decoration: none;
+    color: white;
+    background-color: #303f9f;
+
 }
 
 .authortitle {
@@ -305,6 +365,7 @@
 
 .content-bottom {
     max-width: 1170px;
+    background:url('../content/bck.png') repeat-y;
 }
 
 /* articles */
@@ -383,6 +444,12 @@
     padding: 20px 38px 18px 20px;
 }
 
+.artcle1title a {
+    text-decoration: none;
+    color: black;
+
+}
+
 .artcle1desciption {
     font-family: 'Open Sans';
     font-size: 16px;
@@ -397,6 +464,10 @@
     font-weight: bold;
     margin-bottom: 12px;
     text-align: left;
+}
+.authorName1 a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.871);
 }
 
 .authordetails1 {
@@ -429,6 +500,12 @@
     font-size: 18px;
     font-weight: bold;
     padding: 5px 20px 10px 20px;
+}
+
+.artcle2title a {
+    text-decoration: none;
+    color: black;
+
 }
 
 .artcle2desciption {
@@ -720,8 +797,9 @@
 .items .left {
     width: 39%;
 }
-.items .left img{
-    width:100px;
+
+.items .left img {
+    width: 100px;
     height: 80px;
 
 }
@@ -890,6 +968,10 @@
 .footerbody {
     max-width: 1170px;
 }
+.footermain .icon1{
+    display: none;
+}
+
 
 .every-footer {
     width: 23%;
@@ -963,7 +1045,8 @@
     background-color: black;
     color: white;
 }
-.tweet{
+
+.tweet {
     border-bottom: 1px solid #3c3c3c;
     margin-bottom: 14px;
 }
@@ -985,15 +1068,15 @@
 .tweettop .right {
     width: 90%;
     font-size: 13px;
-  font-family: "OpenSans";
-  color: rgba(255, 255, 255, 0.702);
-  line-height: 1.615;
-  text-align: left;
+    font-family: "OpenSans";
+    color: rgba(255, 255, 255, 0.702);
+    line-height: 1.615;
+    text-align: left;
 
 }
 
 .tweetbottom {
-   
+
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
     color: rgba(255, 255, 255, 0.502);
@@ -1047,14 +1130,16 @@
     color: white;
     text-decoration: none;
 }
+
 .or {
     width: 100%;
     text-align: center;
     border-bottom: 1px solid #000;
     line-height: 0.1em;
     margin: 10px 0 20px;
- }
- .or span {
+}
+
+.or span {
     background: #fff;
     padding: 0 10px;
 }
