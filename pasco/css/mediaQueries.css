@@ -294,9 +294,13 @@
   clear: both;
   width: 100%;
 }
-.toparticle2{
-  margin-left: 20%;
-}
+ .toparticle2 {
+   margin-left: 1%;
+   margin-right: 1%;
+   width: 340px;
+   }
+ 
+
 .article2 .top-bottom{
   display: none;
 }.article2 .play{
@@ -316,7 +320,12 @@ left: 150%;;
 }
 .article8 {
   width: 100%;
-
+}
+.articlemore .more {
+  position: absolute;
+  right: 30%;
+  top: 30%;
+}
 .newsletter input {
 display: none;
 }

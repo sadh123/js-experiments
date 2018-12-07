@@ -95,18 +95,19 @@ dots[3].addEventListener('click',function(){goPhoto(3)});
 
 
 function dotActive(x) {
- for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 4; i++) {
 
-   if (i === x) {
+    if (i === x) {
       console.log(x / 800);
-     dots[i].style.backgroundColor = 'white';
-   } else {
-     dots[i].style.backgroundColor = 'black';
-   }
- }
+      dots[i].style.backgroundColor = 'white';
+    } else {
+      dots[i].style.backgroundColor = 'grey';
+    }
+  }
 
  
-}
-function dotinActive(){
-  dots[x/800].style.backgroundColor="grey";
+
+  function dotinActive() {
+    dots[x / 800].style.backgroundColor = "grey";
+  }
 }
