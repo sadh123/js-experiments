@@ -28,9 +28,7 @@ function slider(){
 
   if(x% 800==0){
     index++;
-    dotActive();
-    if(index<0) {index = max;}
-    else if(index>max) {index = 0;}
+    dotActive(x/800);
     timeout();
    
    
@@ -47,7 +45,7 @@ running=setInterval(slider,0.00000001);
 
 function goPhoto(i){
  images.style.marginLeft = -(i * width) + 'px';
- dotActive();
+ dotActive(i);
 }
 
 function timeout(){
@@ -70,6 +68,7 @@ function rightclk(){
   else if(index>max) {index = 0;}
   console.log(index);
   goPhoto(index);
+
 }
 
 
@@ -95,9 +94,18 @@ dots[2].addEventListener('click',function(){goPhoto(2)});
 dots[3].addEventListener('click',function(){goPhoto(3)});
 
 
-function dotActive(){
-  dots[x/800].style.backgroundColor="white";
-  console.log(x/800);
+function dotActive(x) {
+ for (var i = 0; i < 4; i++) {
+
+   if (i === x) {
+      console.log(x / 800);
+     dots[i].style.backgroundColor = 'white';
+   } else {
+     dots[i].style.backgroundColor = 'black';
+   }
+ }
+
+ 
 }
 function dotinActive(){
   dots[x/800].style.backgroundColor="grey";

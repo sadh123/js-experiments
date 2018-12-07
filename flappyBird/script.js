@@ -99,7 +99,7 @@ function Game() {
 
   }, 15);
   this.bordercollision = function () {
-    if ((parseInt(bird.bird.style.top) >= 472) || (parseInt(bird.bird.style.top) <= 10)) {
+    if ((parseInt(bird.bird.style.top) >= 475) || (parseInt(bird.bird.style.top) <= 0)) {
       clearInterval(interval);
       this.isgameover=true;
       this.container.appendChild(this.gameover);
@@ -217,7 +217,7 @@ function Bird() {
 
   this.flyBird = function () {
     this.bird.style.top = +parseInt(this.bird.style.top) +this.gravity+ 'px';
-    this.gravity -= 1.5;
+    this.gravity -= 1.2;
   }
 
 
