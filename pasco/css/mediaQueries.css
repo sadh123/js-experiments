@@ -297,9 +297,11 @@
  .toparticle2 {
    margin-left: 1%;
    margin-right: 1%;
-   width: 340px;
+   width: 335px;
    }
- 
+ .searchbar {
+   margin-left: 2%;
+ }
 
 .article2 .top-bottom{
   display: none;
