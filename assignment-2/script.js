@@ -18,7 +18,7 @@ function game() {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
   }
-  for (var i = 0; i <5; i++) {
+  for (var i = 0; i <10; i++) {
   character = {
     x: getRandomInt(0, boundary.width - 100),
     y: getRandomInt(0, boundary.height - 100),

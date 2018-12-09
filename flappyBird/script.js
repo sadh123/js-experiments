@@ -217,12 +217,12 @@ function Bird() {
 
   this.flyBird = function () {
     this.bird.style.top = +parseInt(this.bird.style.top) +this.gravity+ 'px';
-    this.gravity -= 1.2;
+    this.gravity -= 1.3;
   }
 
 
   this.movebird = function () {
-    this.gravity += 0.05;
+    this.gravity += 0.07;
     this.bird.style.top = this.gravity + parseInt(this.bird.style.top) + 'px';
 
   }
