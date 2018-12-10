@@ -30,7 +30,7 @@ function Game() {
   this.score = document.createElement('div');
   this.score.style.position = "absolute";
   this.score.style.top = "20px";
-  this.score.style.left = "535px"
+  this.score.style.left = "0px"
   this.score.style.height = "70px";
   this.score.style.zIndex = "50";
   this.score.style.fontSize = "50px";
@@ -42,7 +42,7 @@ function Game() {
   this.scorevalue = document.createElement('div');
   this.scorevalue.style.position = "absolute";
   this.scorevalue.style.top = "20px";
-  this.scorevalue.style.left = "660px";
+  this.scorevalue.style.left = "125px";
   this.scorevalue.style.height = "70px";
   this.scorevalue.style.zIndex = "60";
   this.scorevalue.style.fontSize = "50px";
@@ -111,7 +111,7 @@ function Game() {
     by = parseInt(bird.bird.style.top);
 
     if ((bx + bw >= parseInt(i.pipeup.style.left) && bx + bw <= (parseInt(i.pipeTopDown.style.left) + parseInt(i.pipeTopDown.style.width) + 5))) {
-      if ((parseInt(i.pipeTopUp.style.top)) + 30 >= by || parseInt(i.pipeTopDown.style.top) + 10 <= by + bw)
+      if ((parseInt(i.pipeTopUp.style.top)) + 25 >= by || parseInt(i.pipeTopDown.style.top) + 10 <= by + bw)
 
       {
         console.log("collision")
@@ -217,7 +217,7 @@ function Bird() {
 
   this.flyBird = function () {
     this.bird.style.top = +parseInt(this.bird.style.top) +this.gravity+ 'px';
-    this.gravity -= 1.3;
+    this.gravity -= 1.5;
   }
 
 
