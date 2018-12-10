@@ -6,7 +6,7 @@
 
 /* top-menu */
 .topmenu-container {
-    background-color: black;
+    background-color: #191919;
     width: 100%;
     /* max-width: 1920px; */
     color: white;
@@ -961,7 +961,7 @@
 
 .footerbody-container {
     width: 100%;
-    background-color: black;
+    background-color: #191919;
     padding-bottom: 78px;
 }
 
