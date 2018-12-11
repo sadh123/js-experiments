@@ -58,7 +58,7 @@ function Game() {
   var bird = new Bird();
   bird.createbird(this.container);
 
-  document.addEventListener('keydown', function () {
+  document.addEventListener('click', function () {
     // console.log('down');
     iskeypressed = true;
   });
@@ -264,7 +264,7 @@ function init() {
 
 var init = new init();
 init.showWaitingPage();
-document.addEventListener('keydown', function () {
+document.addEventListener('click', function () {
   if (!init.isgamestarted) {
     init.isgamestarted = true;
     init.startGame();
