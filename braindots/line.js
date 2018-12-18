@@ -2,6 +2,7 @@ function Line(canvas, ctx, obstacleHeight) {
   var HEIGHT = canvas.height;
   var LINE_WIDTH = 4;
   var workingHeight = HEIGHT - obstacleHeight;
+  var   WIDTH = canvas.width;
 
 
   var that = this;
@@ -78,7 +79,7 @@ function Line(canvas, ctx, obstacleHeight) {
         lines[i].y += speed;
         if(lines[maxY.i].y>=350){
           speed=0;
-          // console.log(lines[i]);
+          
           // lines[i].y=lines[i].y;
         }
         that.drawline(lines[i].x, lines[i].y, lastX, lastY);
