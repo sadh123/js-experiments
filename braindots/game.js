@@ -20,8 +20,8 @@ function Game() {
 
     line1 = new Line(canvas, ctx, obstacleHeight);
     obstacle1 = new Obstacle(canvas, ctx, obstacleHeight);
-    ball1 = new Ball(canvas, ctx, 400, 100, "red");
-    ball2 = new Ball(canvas, ctx, 800, 100, "blue");
+    ball1 = new Ball(canvas, ctx, 400, 100, "#5dc7f1");
+    ball2 = new Ball(canvas, ctx, 800, 100, "#ec96bd");
     ball1.drawOneBall();
     ball2.drawOneBall();;
     ball.push(ball1);
@@ -36,6 +36,9 @@ function Game() {
     if (Data.getData()) {
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
       obstacle1.drawObstacle();
+      for (let i = 0; i < line1.lines.length; i++) {
+        line1.moveLine(line1.lines[i], line1.getMaxY(line1.lines[i]));
+      }
 
       for (let i = 0; i <= 1; i++) {
 
@@ -43,9 +46,11 @@ function Game() {
           for (let j = 0; j < line1.lines.length; j++) {
             for (let k = 0; k < line1.lines[j].length; k++) {
               var dist = this.distCircLine(ball[i].x, ball[i].y, line1.lines[j][k].x, line1.lines[j][k].y);
-              if (dist == BALL_RADIUS) {
-                console.log(i,"collision");
-               ball[i].collision = true;
+              // console.log(Math.round(dist));
+
+              if (parseInt(dist) == BALL_RADIUS + 2) {
+                // console.log(i, "collision");
+                ball[i].collision = true;
               }
             }
           }
@@ -55,13 +60,6 @@ function Game() {
 
         }
         ball[i].drawOneBall();
-
-
-      }
-
-      for (let i = 0; i < line1.lines.length; i++) {
-
-        line1.moveLine(line1.lines[i], line1.getMaxY(line1.lines[i]));
 
 
       }

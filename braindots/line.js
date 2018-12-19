@@ -1,8 +1,8 @@
 function Line(canvas, ctx, obstacleHeight) {
   var HEIGHT = canvas.height;
-  var LINE_WIDTH = 4;
+  this.LINE_WIDTH = 4;
   var workingHeight = HEIGHT - obstacleHeight;
-  var   WIDTH = canvas.width;
+  var WIDTH = canvas.width;
 
 
   var that = this;
@@ -29,7 +29,7 @@ function Line(canvas, ctx, obstacleHeight) {
     this.down = false;
     Data.setData(true);
     that.lines.push(that.pointsarray);
-    
+
     that.maxY = that.getMaxY(that.pointsarray);
     // that.lineCollision(that.lines);
 
@@ -63,33 +63,33 @@ function Line(canvas, ctx, obstacleHeight) {
   });
 
   this.moveLine = function (lines, maxY) {
-    speed=1;
+    speed = 1;
     // if (lines[maxY.i].y <= workingHeight - LINE_WIDTH + 1) {
-      lastX = lines[0].x;
-        lastY = lines[0].y + speed;
-      if(lines[maxY.i].y>=350){
+    lastX = lines[0].x;
+    lastY = lines[0].y + speed;
+    if (lines[maxY.i].y >= 350) {
 
-        speed=0;
+      speed = 0;
+    }
+
+    lines[0].y += speed;
+
+    for (let i = 1; i < lines.length; i++) {
+
+      lines[i].y += speed;
+      if (lines[maxY.i].y >= 350) {
+        speed = 0;
+
+        // lines[i].y=lines[i].y;
       }
-    
-      lines[0].y += speed;
+      that.drawline(lines[i].x, lines[i].y, lastX, lastY);
+      lastX = lines[i].x, lastY = lines[i].y;
 
-      for (let i = 1; i < lines.length; i++) {
-
-        lines[i].y += speed;
-        if(lines[maxY.i].y>=350){
-          speed=0;
-          
-          // lines[i].y=lines[i].y;
-        }
-        that.drawline(lines[i].x, lines[i].y, lastX, lastY);
-        lastX = lines[i].x, lastY = lines[i].y;
-
-      }
+    }
   }
 
 
-  this.drawline = function (x, y, lastX, lastY, color = 'black', lineWIdth = LINE_WIDTH) {
+  this.drawline = function (x, y, lastX, lastY, color = 'black', lineWIdth = this.LINE_WIDTH) {
 
     ctx.beginPath();
     ctx.moveTo(lastX, lastY);

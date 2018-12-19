@@ -1,13 +1,13 @@
-class Data{
+class Data {
   constructor() {
 
-    this.startDown=false;
+    this.startDown = false;
   }
 
-  static setData(x){
-    this.startDown=x;
+  static setData(x) {
+    this.startDown = x;
   }
-  static getData(){
+  static getData() {
     return this.startDown;
   }
 }
