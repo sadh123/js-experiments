@@ -1,5 +1,4 @@
-function Obstacle(canvas, ctx, height) {
-
+function Obstacle(height) {
   this.height = height;
   this.drawObstacle = function () {
     ctx.beginPath();

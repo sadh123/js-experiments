@@ -1,10 +1,17 @@
-function Line(canvas, ctx, obstacleHeight) {
+function Line(obstacleHeight) {
   var HEIGHT = canvas.height;
   this.LINE_WIDTH = 4;
   var workingHeight = HEIGHT - obstacleHeight;
   var WIDTH = canvas.width;
-
-
+  this.mouseMove = false;
+  var circle1leftx = circle1X - BALL_RADIUS;
+  var circle1lefty = circle1Y - BALL_RADIUS;
+  var circle2leftx = circle2X - BALL_RADIUS;
+  var circle2lefty = circle2Y - BALL_RADIUS;
+  var circle1rightx = circle1X + BALL_RADIUS;
+  var circle1righty = circle1Y + BALL_RADIUS;
+  var circle2rightx = circle2X + BALL_RADIUS;
+  var circle2righty = circle2Y + BALL_RADIUS;
   var that = this;
   this.lines = [];
   var speed = 1;
@@ -17,36 +24,48 @@ function Line(canvas, ctx, obstacleHeight) {
   }
 
   canvas.addEventListener('mousedown', function (e) {
-    if (e.clientY <= workingHeight) {
-      this.down = true;
-      this.X = e.clientX;
-      this.Y = e.clientY;
-      that.pointsarray = [];
-    }
+    this.down = true;
+
+
+    this.X = e.clientX;
+    this.Y = e.clientY;
+    that.pointsarray = [];
+
   });
   canvas.addEventListener('mouseup', function () {
 
+    if (this.down && !that.mouseMove) {
+
+      ctx.beginPath();
+      ctx.arc(this.X, this.Y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = "black";
+      ctx.fill();
+      ctx.closePath();
+      that.pointsarray.push(new linepoints(this.X, this.Y));
+    }
+    that.mouseMove = false;
     this.down = false;
     Data.setData(true);
+
+    if (that.pointsarray.length > 1) {
+      if ((that.pointsarray[0].x > that.pointsarray[1].x) || (that.pointsarray[1].x > that.pointsarray[2].x) || (that.pointsarray[2].x > that.pointsarray[3].x)) {
+        that.pointsarray = that.pointsarray.reverse();
+      }
+    }
     that.lines.push(that.pointsarray);
-
-    that.maxY = that.getMaxY(that.pointsarray);
-    // that.lineCollision(that.lines);
-
-
-
   });
 
   canvas.addEventListener('mousemove', function (e) {
 
     this.style.cursor = 'pointer';
-    if (e.clientY <= workingHeight) {
+    if (this.Y <= workingHeight - that.LINE_WIDTH) {
       if (this.down) {
-
+        that.mouseMove = true;
         ctx.beginPath();
         ctx.moveTo(this.X, this.Y);
         ctx.lineCap = 'round';
         ctx.lineWidth = 3;
+
         ctx.lineTo(e.clientX, e.clientY);
 
         that.pointsarray.push(new linepoints(e.clientX, e.clientY));
