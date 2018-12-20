@@ -24,9 +24,8 @@ function Line(obstacleHeight) {
   }
 
   canvas.addEventListener('mousedown', function (e) {
+    this.style.cursor = 'pointer';
     this.down = true;
-
-
     this.X = e.clientX;
     this.Y = e.clientY;
     that.pointsarray = [];
@@ -35,13 +34,13 @@ function Line(obstacleHeight) {
   canvas.addEventListener('mouseup', function () {
 
     if (this.down && !that.mouseMove) {
-
+      that.pointsarray.push(new linepoints(this.X, this.Y));
       ctx.beginPath();
-      ctx.arc(this.X, this.Y, 2, 0, Math.PI * 2);
+      ctx.arc(this.X, this.Y, 3, 0, Math.PI * 2);
       ctx.fillStyle = "black";
       ctx.fill();
       ctx.closePath();
-      that.pointsarray.push(new linepoints(this.X, this.Y));
+
     }
     that.mouseMove = false;
     this.down = false;

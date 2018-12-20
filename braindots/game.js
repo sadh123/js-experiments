@@ -90,6 +90,11 @@ function Game() {
             console.log('next level');
             collBetnBalls = true;
           }
+
+          if (ball[i].x < 0 || ball[i].x + BALL_RADIUS > WIDTH) {
+            console.log("game over");
+
+          }
           if (!ball[i].collision) {
             ball[i].moveBallY(1.5);
           }
