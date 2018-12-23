@@ -36,6 +36,7 @@ function Line(obstacleHeight) {
       ctx.fill();
       ctx.closePath();
       that.pointsarray.push(new linepoints(this.X, this.Y));
+
     }
     that.mouseMove = false;
     this.down = false;
@@ -47,6 +48,7 @@ function Line(obstacleHeight) {
       }
     }
     that.lines.push(that.pointsarray);
+    // console.log(that.getMinY(that.pointsarray));
     // console.log(that.getcentroid(that.pointsarray));
   });
 
@@ -137,11 +139,33 @@ function Line(obstacleHeight) {
       x: points[0].x,
       y: points[0].y,
       i: 0
-    })
+    });
 
 
     return max;
-  }
+  };
+
+  this.getMinY = function (points) {
+
+    var min = points.reduce(function (acc, curr, i, line) {
+
+      if (acc.y > curr.y) {
+        return {
+          x: curr.x,
+          y: curr.y,
+          i: i
+        }
+      } else return acc;
+
+    }, {
+      x: points[0].x,
+      y: points[0].y,
+      i: 0
+    });
+
+
+    return min;
+  };
 
   this.getcentroid = function (points) {
     var centroid = {

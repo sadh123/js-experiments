@@ -27,9 +27,12 @@ function Ball(x1, y1, color) {
   }
 
   this.moveBallX = function (dir) {
+
     this.x = this.x + dir;
+
   }
   this.ballY = function (y) {
+
     this.y += y;
   }
 }

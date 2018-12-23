@@ -9,6 +9,7 @@ var circle1X = 400;
 var circle1Y = 150;
 var circle2X = 800;
 var circle2Y = 150;
+var obstacleHeight = 50;
 var background = new Image();
 background.src = "./br-bck.png";
 var isGameOver = false;
@@ -23,7 +24,7 @@ function Game() {
   var line1;
   var obstacle1;
   // var collision = false;
-  var obstacleHeight = 50;
+
   Data.setData(false);
   var collBetnBalls = false;
   var slopeLeftVal;
@@ -101,10 +102,12 @@ function Game() {
               );
 
               if (parseInt(dist) == BALL_RADIUS + 2) {
+                console.log('collision');
+
                 ball[i].collision = true;
                 ball[i].collideIndex = k;
 
-                if (line1.lines[j][ball[i].collideIndex - 1].y < line1.lines[j][ball[i].collideIndex + 1].y || (line1.lines[j][ball[i].collideIndex - 2].y < line1.lines[j][ball[i].collideIndex + 1].y)) {
+                if (line1.lines[j][ball[i].collideIndex - 1].y <= line1.lines[j][ball[i].collideIndex + 1].y || (line1.lines[j][ball[i].collideIndex - 2].y < line1.lines[j][ball[i].collideIndex + 1].y)) {
                   ball[i].slopeLeft = true;
                   ball[i].slopeRight = false;
 
@@ -132,18 +135,20 @@ function Game() {
                 // }
                 if (ball[i].slopeLeft) {
                   ball[i].moveBallX(velBallX);
-
                 }
                 if (ball[i].slopeRight) {
                   ball[i].moveBallX(-velBallX);
-
                 }
+                // console.log(ball[i].y);
+                // if (Math.floor(ball[i].y) == HEIGHT - obstacleHeight - BALL_RADIUS) {
+                //   log("move ball on hit by new line");
+                // }
               }
             }
           }
 
 
-          if (parseInt(this.distance(ball[0].x, ball[0].y, ball[1].x, ball[1].y)) === BALL_RADIUS + BALL_RADIUS) {
+          if (parseInt(this.distance(ball[0].x, ball[0].y, ball[1].x, ball[1].y)) <= BALL_RADIUS + BALL_RADIUS) {
             islevelChange = "true";
             canvas.style.display = "none";
             nextLevel.style.display = "block";
@@ -196,7 +201,15 @@ function Game() {
 
 
   this.slope = function (x1, y1, x2, y2) {
-    var slope = (y2 - y1) / (x2 - x1);
+    var slope = {
+      dx: 0,
+      dy: 0,
+      grad: 1
+    };
+    dx = y2 - y1;
+    dy = x2 - x1;
+    grad = dy / dx;
     return slope;
+
   }
 }
