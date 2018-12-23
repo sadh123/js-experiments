@@ -2,19 +2,13 @@ function Line(obstacleHeight) {
   var HEIGHT = canvas.height;
   this.LINE_WIDTH = 4;
   var workingHeight = HEIGHT - obstacleHeight;
-  var WIDTH = canvas.width;
+
   this.mouseMove = false;
-  var circle1leftx = circle1X - BALL_RADIUS;
-  var circle1lefty = circle1Y - BALL_RADIUS;
-  var circle2leftx = circle2X - BALL_RADIUS;
-  var circle2lefty = circle2Y - BALL_RADIUS;
-  var circle1rightx = circle1X + BALL_RADIUS;
-  var circle1righty = circle1Y + BALL_RADIUS;
-  var circle2rightx = circle2X + BALL_RADIUS;
-  var circle2righty = circle2Y + BALL_RADIUS;
+
   var that = this;
   this.lines = [];
   var speed = 1;
+
 
   this.pointsarray = [];
 
@@ -24,6 +18,8 @@ function Line(obstacleHeight) {
   }
 
   canvas.addEventListener('mousedown', function (e) {
+
+
     this.style.cursor = 'pointer';
     this.down = true;
     this.X = e.clientX;
@@ -34,13 +30,12 @@ function Line(obstacleHeight) {
   canvas.addEventListener('mouseup', function () {
 
     if (this.down && !that.mouseMove) {
-      that.pointsarray.push(new linepoints(this.X, this.Y));
       ctx.beginPath();
       ctx.arc(this.X, this.Y, 3, 0, Math.PI * 2);
       ctx.fillStyle = "black";
       ctx.fill();
       ctx.closePath();
-
+      that.pointsarray.push(new linepoints(this.X, this.Y));
     }
     that.mouseMove = false;
     this.down = false;
@@ -52,6 +47,7 @@ function Line(obstacleHeight) {
       }
     }
     that.lines.push(that.pointsarray);
+    // console.log(that.getcentroid(that.pointsarray));
   });
 
   canvas.addEventListener('mousemove', function (e) {
@@ -82,10 +78,9 @@ function Line(obstacleHeight) {
 
   this.moveLine = function (lines, maxY) {
     speed = 1;
-    // if (lines[maxY.i].y <= workingHeight - LINE_WIDTH + 1) {
     lastX = lines[0].x;
     lastY = lines[0].y + speed;
-    if (lines[maxY.i].y >= 350) {
+    if (lines[maxY.i].y >= HEIGHT - obstacleHeight) {
 
       speed = 0;
     }
@@ -95,7 +90,7 @@ function Line(obstacleHeight) {
     for (let i = 1; i < lines.length; i++) {
 
       lines[i].y += speed;
-      if (lines[maxY.i].y >= 350) {
+      if (lines[maxY.i].y >= HEIGHT - obstacleHeight) {
         speed = 0;
 
         // lines[i].y=lines[i].y;
@@ -104,6 +99,12 @@ function Line(obstacleHeight) {
       lastX = lines[i].x, lastY = lines[i].y;
 
     }
+    // for (let j = 0; j < that.lines.length; j++) {
+    //   for (let k = 0; k < that.lines[j].length; k++) {
+    //     console.log(that.lines[j][k].x, that.lines[j][k].y)
+    //   }
+    // }
+
   }
 
 
@@ -141,6 +142,25 @@ function Line(obstacleHeight) {
 
     return max;
   }
+
+  this.getcentroid = function (points) {
+    var centroid = {
+      x: 0,
+      y: 0
+    };
+    for (var i = 0; i < points.length; i++) {
+      var point = points[i];
+      centroid.x += point.x;
+      centroid.y += point.y;
+    }
+    centroid.x /= points.length;
+    centroid.y /= points.length;
+    centroid.x = Math.round(centroid.x)
+    centroid.y = Math.round(centroid.y)
+    return centroid;
+  }
+
+
   this.lineCollision = function (lines) {
     for (let i = 0; i < lines.length; i++) {
       for (let j = 0; j < lines[i].length; j++) {
@@ -148,8 +168,6 @@ function Line(obstacleHeight) {
 
       }
     }
-
-
 
   }
 

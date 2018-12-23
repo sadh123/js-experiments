@@ -4,19 +4,97 @@
 <head>
   <title>mainpage</title>
   <style>
-    /* body {
-      background-color:black ;
-    } */
+    body {
+      background-color: #476d49;
+    }
 
     #canvas {
-      /* background: "url('../braindots/br-bck.png') repeat"; */
+      display: none;
+      background: white;
+      margin: 0px auto;
+    }
+
+    .startImage {
+      position: relative;
+      width: 1300px;
+      height: 600px;
+      background-color: white;
+      margin: 0px auto;
+
+    }
+
+    .text1 {
+      position: absolute;
+      top: 40%;
+      left: 30%;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 80px;
+      font-weight: 700;
+      color: black;
+      margin: 0px auto;
+    }
+
+    .text2 {
+      position: absolute;
+      top: 60%;
+      left: 40%;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 70px;
+      font-weight: 700;
+      color: black;
+      margin: 0px auto;
+    }
+
+    .text3 {
+      position: absolute;
+      top: 60%;
+      left: 60%;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 70px;
+      font-weight: 700;
+      color: black;
+      margin: 0px auto;
+    }
+
+    .nextLevel {
+      display: none;
+      position: relative;
+      width: 1300px;
+      height: 600px;
+      background-color: white;
+      margin: 0px auto;
+
+
+    }
+
+
+    .gameOver {
+      display: none;
+      position: relative;
+      width: 1300px;
+      height: 600px;
+      background-color: white;
+      margin: 0px auto;
+
+
     }
 
   </style>
 </head>
 
 <body>
-  <canvas id="canvas" width="1300" height="400"></canvas>
+  <canvas id="canvas" width="1300" height="600"></canvas>
+  <div class="startImage">
+    <div class="text1">CLICK TO PLAY</div>
+    <div class="text2">level:</div><span class="text3">1</span>
+  </div>
+  <div class="nextLevel">
+    <div class="text1">NEXT LEVEL</div>
+    <div class="text2">level:</div><span class="text3">1</span>
+  </div>
+  <div class="gameOver">
+    <div class="text1">GAME OVER</div>
+  </div>
 
   <script src="Data.js"></script>
 
@@ -24,6 +102,7 @@
   <script src="obstacle.js"></script>
   <script src="line.js"></script>
   <script src="game.js"></script>
+  <script src="startPage.js"></script>
 </body>
 
 </html>
