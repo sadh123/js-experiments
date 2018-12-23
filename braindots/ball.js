@@ -21,9 +21,10 @@ function Ball(x1, y1, color) {
 
 
   this.moveBallY = function () {
-
-    speed += 0.001;
-    this.y = this.y + speed;
+    if (this.y < HEIGHT - obstacleHeight - BALL_RADIUS) {
+      speed += 0.001;
+      this.y = this.y + speed;
+    }
   }
 
   this.moveBallX = function (dir) {

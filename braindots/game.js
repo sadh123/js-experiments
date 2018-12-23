@@ -91,86 +91,93 @@ function Game() {
       }
 
       for (let i = 0; i <= 1; i++) {
-        if (ball[i].y < HEIGHT - obstacleHeight - BALL_RADIUS) {
-          for (let j = 0; j < line1.lines.length; j++) {
-            for (let k = 0; k < line1.lines[j].length; k++) {
-              var dist = this.distance(
-                ball[i].x,
-                ball[i].y,
-                line1.lines[j][k].x,
-                line1.lines[j][k].y,
-              );
+        for (let j = 0; j < line1.lines.length; j++) {
+          for (let k = 0; k < line1.lines[j].length; k++) {
+            if (Math.ceil(ball[i].y) == HEIGHT - obstacleHeight - BALL_RADIUS) {
+              console.log(line1.lines[j][k].y);
+            };
+            var dist = this.distance(
+              ball[i].x,
+              ball[i].y,
+              line1.lines[j][k].x,
+              line1.lines[j][k].y,
+            );
 
-              if (parseInt(dist) == BALL_RADIUS + 2) {
-                console.log('collision');
+            if (parseInt(dist) == BALL_RADIUS + 2) {
+              ball[i].collision = true;
+              ball[i].collideIndex = k;
+              if (ball[i].collideIndex == 0) {
+                ball[i].slopeLeft = true;
+                ball[i].slopeRight = false;
+              } else if (line1.lines[j][ball[i].collideIndex - 1].y <= line1.lines[j][ball[i].collideIndex + 1].y || (line1.lines[j][ball[i].collideIndex - 2].y < line1.lines[j][ball[i].collideIndex + 1].y)) {
+                ball[i].slopeLeft = true;
+                ball[i].slopeRight = false;
 
-                ball[i].collision = true;
-                ball[i].collideIndex = k;
+              } else if (ball[i].collideIndex == line1.lines[j].length - 1) {
+                ball[i].slopeRight = true;
+                ball[i].slopeLeft = false;
 
-                if (line1.lines[j][ball[i].collideIndex - 1].y <= line1.lines[j][ball[i].collideIndex + 1].y || (line1.lines[j][ball[i].collideIndex - 2].y < line1.lines[j][ball[i].collideIndex + 1].y)) {
-                  ball[i].slopeLeft = true;
-                  ball[i].slopeRight = false;
-
-                } else {
-                  ball[i].slopeRight = true;
-                  ball[i].slopeLeft = false;
-
-                }
+              } else {
+                ball[i].slopeRight = true;
+                ball[i].slopeLeft = false;
 
               }
 
-              if (!collBetnBalls) {
-                // if (ball[i].collision) {
+            }
 
-                // pos = this.ballLineCollision(line1.lines[j][k].y, ball[i].y);
-                //   // console.log('line', line1.lines[j][k].y);
-                //   // console.log('ball', ball[i].y);
 
-                // console.log(pos);
+            if (!collBetnBalls) {
+              // if (ball[i].collision) {
 
-                //   // if (Math.round(pos) > 0) {
-                //   //   ball[i].moveBallY();
+              // pos = this.ballLineCollision(line1.lines[j][k].y, ball[i].y);
+              //   // console.log('line', line1.lines[j][k].y);
+              //   // console.log('ball', ball[i].y);
 
-                //   // }
-                // }
-                if (ball[i].slopeLeft) {
-                  ball[i].moveBallX(velBallX);
-                }
-                if (ball[i].slopeRight) {
-                  ball[i].moveBallX(-velBallX);
-                }
-                // console.log(ball[i].y);
-                // if (Math.floor(ball[i].y) == HEIGHT - obstacleHeight - BALL_RADIUS) {
-                //   log("move ball on hit by new line");
-                // }
+              // console.log(pos);
+
+              //   // if (Math.round(pos) > 0) {
+              //   //   ball[i].moveBallY();
+
+              //   // }
+              // }
+              if (ball[i].slopeLeft) {
+                ball[i].moveBallX(velBallX);
               }
+              if (ball[i].slopeRight) {
+                ball[i].moveBallX(-velBallX);
+              }
+              // console.log(ball[i].y);
+              // if (Math.floor(ball[i].y) == HEIGHT - obstacleHeight - BALL_RADIUS) {
+              //   log("move ball on hit by new line");
+              // }
             }
           }
+        }
 
 
-          if (parseInt(this.distance(ball[0].x, ball[0].y, ball[1].x, ball[1].y)) <= BALL_RADIUS + BALL_RADIUS) {
-            islevelChange = "true";
-            canvas.style.display = "none";
-            nextLevel.style.display = "block";
-            nextLevel.getElementsByClassName('text3')[0].innerHTML = level + 1;
-            collBetnBalls = true;
+        if (parseInt(this.distance(ball[0].x, ball[0].y, ball[1].x, ball[1].y)) <= BALL_RADIUS + BALL_RADIUS) {
+          islevelChange = "true";
+          canvas.style.display = "none";
+          nextLevel.style.display = "block";
+          nextLevel.getElementsByClassName('text3')[0].innerHTML = level + 1;
+          collBetnBalls = true;
 
-
-          }
-
-          if (ball[i].x < 0 || ball[i].x + BALL_RADIUS > WIDTH) {
-            isGameOver = true;
-            startPage.getElementsByClassName('text3')[0].innerHTML = level;
-            collBetnBalls = true;
-            canvas.style.display = "none";
-            gameOver.style.display = "block";
-
-          }
-          // if (!ball[i].collision) {
-          ball[i].moveBallY();
-          // }
 
         }
+
+        if (ball[i].x < 0 || ball[i].x + BALL_RADIUS > WIDTH) {
+          isGameOver = true;
+          startPage.getElementsByClassName('text3')[0].innerHTML = level;
+          collBetnBalls = true;
+          canvas.style.display = "none";
+          gameOver.style.display = "block";
+
+        }
+        // if (!ball[i].collision) {
+        ball[i].moveBallY();
+        // }
+
+
         ball[i].drawOneBall();
       }
     } else {
