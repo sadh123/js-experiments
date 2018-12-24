@@ -32,7 +32,7 @@ function Game() {
   isGameOver = false;
   islevelChange = false;
 
-  this.init = function () {
+  this.init = function() {
     if (level === 1) {
       line1 = new Line(obstacleHeight);
 
@@ -85,8 +85,6 @@ function Game() {
       obstacle1.drawObstacle();
 
       this.drawGame();
-
-
     }
 
     if (level === 4) {
@@ -111,11 +109,15 @@ function Game() {
 
       this.drawGame();
     }
+    if (level === 5) {
+      line1 = new Line(obstacleHeight);
+
+      obstacle1 = new Obstacle(obstacleHeight);
+      obstacle1.drawObstacle();
+    }
   };
 
-  this.drawGame = function () {
-
-
+  this.drawGame = function() {
     if (Data.getData()) {
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
       obstacle1.drawObstacle();
@@ -126,7 +128,6 @@ function Game() {
       for (let i = 0; i <= 1; i++) {
         for (let j = 0; j < line1.lines.length; j++) {
           for (let k = 0; k < line1.lines[j].length; k++) {
-
             var dist = this.distance(
               ball[i].x,
               ball[i].y,
@@ -162,14 +163,12 @@ function Game() {
             }
 
             if (!collBetnBalls) {
-
               if (ball[i].slopeLeft) {
                 ball[i].moveBallX(velBallX);
               }
               if (ball[i].slopeRight) {
                 ball[i].moveBallX(-velBallX);
               }
-
             }
           }
         }
@@ -195,7 +194,6 @@ function Game() {
 
         ball[i].moveBallY();
 
-
         ball[i].drawOneBall();
       }
     } else {
@@ -210,18 +208,18 @@ function Game() {
     requestAnimationFrame(this.drawGame.bind(this));
   };
 
-  this.distance = function (x1, y1, x2, y2) {
+  this.distance = function(x1, y1, x2, y2) {
     var dx = x2 - x1;
     var dy = y2 - y1;
     var distance = Math.sqrt(dx * dx + dy * dy);
     return distance;
   };
 
-  this.ballLineCollision = function (lineY, ballYCor) {
+  this.ballLineCollision = function(lineY, ballYCor) {
     return lineY - ballYCor;
   };
 
-  this.slope = function (x1, y1, x2, y2) {
+  this.slope = function(x1, y1, x2, y2) {
     var slope = {
       dx: 0,
       dy: 0,
