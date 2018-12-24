@@ -16,7 +16,6 @@ var isGameOver = false;
 var islevelChange = false;
 var level = 1;
 
-
 function Game() {
   ctx.clearRect(0, 0, WIDTH, HEIGHT);
   var ball = [];
@@ -52,7 +51,11 @@ function Game() {
 
       obstacle1 = new Obstacle(obstacleHeight);
       ball1 = new Ball(circle1X, circle1Y, "#5dc7f1");
-      ball2 = new Ball(circle2X, HEIGHT - obstacleHeight - BALL_RADIUS, "#ec96bd");
+      ball2 = new Ball(
+        circle2X,
+        HEIGHT - obstacleHeight - BALL_RADIUS,
+        "#ec96bd",
+      );
       ball1.drawOneBall();
       ball2.drawOneBall();
       ball.push(ball1);
@@ -65,8 +68,41 @@ function Game() {
       line1 = new Line(obstacleHeight);
 
       obstacle1 = new Obstacle(obstacleHeight);
-      ball1 = new Ball(circle1X, HEIGHT - obstacleHeight - BALL_RADIUS, "#5dc7f1");
-      ball2 = new Ball(circle2X, HEIGHT - obstacleHeight - BALL_RADIUS, "#ec96bd");
+      ball1 = new Ball(
+        circle1X,
+        HEIGHT - obstacleHeight - BALL_RADIUS,
+        "#5dc7f1",
+      );
+      ball2 = new Ball(
+        circle2X,
+        HEIGHT - obstacleHeight - BALL_RADIUS,
+        "#ec96bd",
+      );
+      ball1.drawOneBall();
+      ball2.drawOneBall();
+      ball.push(ball1);
+      ball.push(ball2);
+      obstacle1.drawObstacle();
+
+      this.drawGame();
+
+
+    }
+
+    if (level === 4) {
+      line1 = new Line(obstacleHeight);
+
+      obstacle1 = new Obstacle(obstacleHeight);
+      ball1 = new Ball(
+        circle1X,
+        HEIGHT - obstacleHeight - BALL_RADIUS,
+        "#5dc7f1",
+      );
+      ball2 = new Ball(
+        circle2X,
+        HEIGHT - obstacleHeight - BALL_RADIUS,
+        "#ec96bd",
+      );
       ball1.drawOneBall();
       ball2.drawOneBall();
       ball.push(ball1);
@@ -75,27 +111,22 @@ function Game() {
 
       this.drawGame();
     }
-
   };
 
   this.drawGame = function () {
-    // ctx.drawImage(background, 10, 10);
+
 
     if (Data.getData()) {
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
       obstacle1.drawObstacle();
       for (let i = 0; i < line1.lines.length; i++) {
-
         line1.moveLine(line1.lines[i], line1.getMaxY(line1.lines[i]));
-
       }
 
       for (let i = 0; i <= 1; i++) {
         for (let j = 0; j < line1.lines.length; j++) {
           for (let k = 0; k < line1.lines[j].length; k++) {
-            if (Math.ceil(ball[i].y) == HEIGHT - obstacleHeight - BALL_RADIUS) {
-              console.log(line1.lines[j][k].y);
-            };
+
             var dist = this.distance(
               ball[i].x,
               ball[i].y,
@@ -106,76 +137,63 @@ function Game() {
             if (parseInt(dist) == BALL_RADIUS + 2) {
               ball[i].collision = true;
               ball[i].collideIndex = k;
+
               if (ball[i].collideIndex == 0) {
                 ball[i].slopeLeft = true;
                 ball[i].slopeRight = false;
-              } else if (line1.lines[j][ball[i].collideIndex - 1].y <= line1.lines[j][ball[i].collideIndex + 1].y || (line1.lines[j][ball[i].collideIndex - 2].y < line1.lines[j][ball[i].collideIndex + 1].y)) {
-                ball[i].slopeLeft = true;
-                ball[i].slopeRight = false;
-
-              } else if (ball[i].collideIndex == line1.lines[j].length - 1) {
-                ball[i].slopeRight = true;
-                ball[i].slopeLeft = false;
-
+              } else if (
+                ball[i].collideIndex > 0 &&
+                ball[i].collideIndex < line1.lines[j].length - 1
+              ) {
+                if (
+                  line1.lines[j][ball[i].collideIndex - 1].y <=
+                  line1.lines[j][ball[i].collideIndex + 1].y
+                ) {
+                  ball[i].slopeLeft = true;
+                  ball[i].slopeRight = false;
+                } else {
+                  ball[i].slopeRight = true;
+                  ball[i].slopeLeft = false;
+                }
               } else {
                 ball[i].slopeRight = true;
                 ball[i].slopeLeft = false;
-
               }
-
             }
 
-
             if (!collBetnBalls) {
-              // if (ball[i].collision) {
 
-              // pos = this.ballLineCollision(line1.lines[j][k].y, ball[i].y);
-              //   // console.log('line', line1.lines[j][k].y);
-              //   // console.log('ball', ball[i].y);
-
-              // console.log(pos);
-
-              //   // if (Math.round(pos) > 0) {
-              //   //   ball[i].moveBallY();
-
-              //   // }
-              // }
               if (ball[i].slopeLeft) {
                 ball[i].moveBallX(velBallX);
               }
               if (ball[i].slopeRight) {
                 ball[i].moveBallX(-velBallX);
               }
-              // console.log(ball[i].y);
-              // if (Math.floor(ball[i].y) == HEIGHT - obstacleHeight - BALL_RADIUS) {
-              //   log("move ball on hit by new line");
-              // }
+
             }
           }
         }
 
-
-        if (parseInt(this.distance(ball[0].x, ball[0].y, ball[1].x, ball[1].y)) <= BALL_RADIUS + BALL_RADIUS) {
+        if (
+          parseInt(this.distance(ball[0].x, ball[0].y, ball[1].x, ball[1].y)) <=
+          BALL_RADIUS + BALL_RADIUS
+        ) {
           islevelChange = "true";
           canvas.style.display = "none";
           nextLevel.style.display = "block";
-          nextLevel.getElementsByClassName('text3')[0].innerHTML = level + 1;
+          nextLevel.getElementsByClassName("text3")[0].innerHTML = level + 1;
           collBetnBalls = true;
-
-
         }
 
         if (ball[i].x < 0 || ball[i].x + BALL_RADIUS > WIDTH) {
           isGameOver = true;
-          startPage.getElementsByClassName('text3')[0].innerHTML = level;
+          startPage.getElementsByClassName("text3")[0].innerHTML = level;
           collBetnBalls = true;
           canvas.style.display = "none";
           gameOver.style.display = "block";
-
         }
-        // if (!ball[i].collision) {
+
         ball[i].moveBallY();
-        // }
 
 
         ball[i].drawOneBall();
@@ -201,22 +219,17 @@ function Game() {
 
   this.ballLineCollision = function (lineY, ballYCor) {
     return lineY - ballYCor;
-
-
-  }
-
-
+  };
 
   this.slope = function (x1, y1, x2, y2) {
     var slope = {
       dx: 0,
       dy: 0,
-      grad: 1
+      grad: 1,
     };
     dx = y2 - y1;
     dy = x2 - x1;
     grad = dy / dx;
     return slope;
-
-  }
+  };
 }
