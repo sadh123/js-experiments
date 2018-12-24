@@ -431,10 +431,7 @@
 }
 
 .article1 .top-bottom {
-    position: absolute;
     bottom: 0%;
-    left: 0%;
-
 }
 
 .top-bottom {
@@ -445,6 +442,10 @@
     padding-bottom: 20px;
     color: white;
     font-weight: 600;
+}
+
+.article89 .top-bottom {
+    bottom: -5%;
 }
 
 .icon-photo {
