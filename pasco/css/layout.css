@@ -365,7 +365,7 @@
 
 .content-bottom {
     max-width: 1170px;
-    background:url('../content/bck.png') repeat-y;
+    background: url('../content/bck.png') repeat-y;
 }
 
 /* articles */
@@ -418,19 +418,33 @@
     width: 68.29268%;
 }
 
-.play {
+.article1 .play {
     position: absolute;
     top: 50%;
     left: 50%;
 }
 
-.top-bottom {
+.play {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+.article1 .top-bottom {
     position: absolute;
     bottom: 0%;
+    left: 0%;
+
+}
+
+.top-bottom {
+    position: absolute;
+    bottom: -8%;
     left: 0%;
     width: 100%;
     padding-bottom: 20px;
     color: white;
+    font-weight: 600;
 }
 
 .icon-photo {
@@ -465,7 +479,8 @@
     margin-bottom: 12px;
     text-align: left;
 }
-.authorName1 a{
+
+.authorName1 a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.871);
 }
@@ -968,7 +983,8 @@
 .footerbody {
     max-width: 1170px;
 }
-.footermain .icon1{
+
+.footermain .icon1 {
     display: none;
 }
 
