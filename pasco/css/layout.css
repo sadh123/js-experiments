@@ -1,4 +1,4 @@
-.body {
+body {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -257,6 +257,12 @@
 
 }
 
+
+.readmore a :hover {
+    background-color: #112280;
+
+}
+
 .authortitle {
     text-align: center;
 }
@@ -270,6 +276,11 @@
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 12px;
+}
+
+.authorName a {
+    text-decoration: none;
+    color: white;
 }
 
 .authordetails {
@@ -387,12 +398,11 @@
 .right-articletop {
     float: right;
     font-size: 18px;
-    padding-right: 20px;
 }
 
 .top-bottom li {
     display: inline;
-    padding-right: 20PX;
+    padding-right: 20px;
 }
 
 .articlephoto {
@@ -406,6 +416,7 @@
 
 .toparticle2 {
     min-height: 165px;
+    max-width: 260px;
 }
 
 .articleleft {
@@ -441,7 +452,7 @@
     width: 100%;
     padding-bottom: 20px;
     color: white;
-    font-weight: 600;
+    font-size: 14px;
 }
 
 .article8 .top-bottom {
